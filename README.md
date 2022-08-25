@@ -1,3 +1,5 @@
+[![Build Status](https://cebueno.visualstudio.com/Tailspin/_apis/build/status/cassiebueno.ContosoAir?branchName=master)](https://cebueno.visualstudio.com/Tailspin/_build/latest?definitionId=2&branchName=master)
+
 # This project is retired, archived, and no longer supported. You are welcome to continue to use and fork the repository.
 
 
