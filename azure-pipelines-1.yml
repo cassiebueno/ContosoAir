@@ -19,11 +19,6 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
-- task: CopyFiles@2
-  inputs:
-    SourceFolder: 'deployment'
-    Contents: '*.json'
-    TargetFolder: '$(build.artifactstagingdirectory)/Templates'
 - task: DownloadPipelineArtifact@2
   inputs:
     buildType: 'specific'
@@ -42,8 +37,8 @@ steps:
     resourceGroupName: '$(resourcegroup)'
     location: 'Central US'
     templateLocation: 'Linked artifact'
-    csmFile: '$(Pipeline.Workspace)/drop/Templates/azuredeploy.json'
-    csmParametersFile: '$(Pipeline.Workspace)/drop/Templates/azuredeploy.parameters.json'
+    csmFile: '$(Pipeline.Workspace)/drop/azuredeploy.json'
+    csmParametersFile: '$(Pipeline.Workspace)/drop/azuredeploy.parameters.json'
     overrideParameters: '-p_environment $(web_environment) -p_site_prefix $(web_prefix) -p_site_web_name $(web_site)'
     deploymentMode: 'Incremental'
 
