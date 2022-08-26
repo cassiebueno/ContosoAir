@@ -19,6 +19,11 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
+- task: CopyFiles@2
+  inputs:
+    SourceFolder: 'deployment'
+    Contents: '*.json'
+    TargetFolder: '$(build.artifactstagingdirectory)/Templates'
 - task: DownloadPipelineArtifact@2
   inputs:
     buildType: 'specific'
